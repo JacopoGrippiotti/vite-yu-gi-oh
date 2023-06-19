@@ -8,7 +8,7 @@
             {{ name }}
         </div>
         <div class="card-type">
-            
+            {{ type }}
         </div>
     </div>
 </template>
@@ -23,7 +23,8 @@ export default {
     },
     props:{
         image: String,
-        name: String
+        name: String,
+        type:String
     }
 }
 </script>
@@ -43,6 +44,12 @@ export default {
         div.card-title{
             color: white;
             padding: 10px 0px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        div.card-type{
+            margin: 10px 0px;
         }
         div.img-wrapper{
             width: 100%;

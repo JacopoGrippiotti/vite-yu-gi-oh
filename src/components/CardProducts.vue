@@ -2,7 +2,8 @@
     <div class='container'>
         <SingleCard v-for="character in charactersList"
             :image="character.card_images[0].image_url"
-            :name="character.name"                                            />
+            :name="character.name"                      
+            :type="character.type"                                          />
     </div>
 </template>
 <script>
