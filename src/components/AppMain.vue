@@ -20,8 +20,6 @@ export default {
     main{
         background-color: orange;
         display: flex;
-        padding-top: 80px;
-        height: 1800px;
     }
     
 </style>

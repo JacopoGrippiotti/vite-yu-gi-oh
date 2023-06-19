@@ -40,9 +40,10 @@ export default {
 
     div.container{
         @include flex(row,space-evenly,wrap);
-        width: 75%;
+        width: 85%;
         height: 100%;
         background-color: white;
-        margin: 0 auto;
+        margin: 60px auto;
+        padding-bottom: 30px;
     }
 </style>
