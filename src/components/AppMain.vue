@@ -1,13 +1,16 @@
 <template>
     <main>
-        <div class="container">
-        </div>
+        <CardProducts/>
     </main>
     
 </template>
 <script>
+import CardProducts from './CardProducts.vue';
 export default {
-    name:'AppMain'
+    name:'AppMain',
+    components:{
+        CardProducts
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -18,13 +21,7 @@ export default {
         background-color: orange;
         display: flex;
         padding-top: 80px;
-        div.container{
-        width: 80%;
         height: 1200px;
-        background-color: white;
-        margin: 0 auto;
-
-    }
     }
     
 </style>
