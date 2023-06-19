@@ -15,10 +15,15 @@ export default {
 
     div.title-container{
        background-color: white; 
-
-        h1{
-        font-size: 1.4rem;
+       height: 60px;
+       display:flex;
+       align-items: center;
+        
+       h1{
+        font-size: 2rem;
         color: black;
+        margin-left: 70px;
+        font-weight: normal;
     }
     }
     
