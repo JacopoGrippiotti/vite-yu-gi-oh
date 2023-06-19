@@ -21,7 +21,7 @@ export default {
         background-color: orange;
         display: flex;
         padding-top: 80px;
-        height: 1200px;
+        height: 1800px;
     }
     
 </style>

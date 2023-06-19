@@ -1,6 +1,8 @@
 <template>
     <div class='container'>
-        
+        <SingleCard v-for="character in charactersList"
+            :image="character.card_images[0].image_url"
+                                                         />
     </div>
 </template>
 <script>
@@ -37,7 +39,8 @@ export default {
     @use '../styles/partials/variables' as*;
 
     div.container{
-        width: 80%;
+        @include flex(row,space-evenly,wrap);
+        width: 75%;
         height: 100%;
         background-color: white;
         margin: 0 auto;
