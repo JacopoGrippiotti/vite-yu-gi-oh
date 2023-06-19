@@ -1,7 +1,7 @@
 <template>
-    <div class="title-container">
+    <header>
         <h1>Yu-Gi-Oh Api</h1>
-    </div>
+    </header>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
     @use '../styles/partials/mixins' as*;
     @use '../styles/partials/variables' as*;
 
-    div.title-container{
+    header{
        background-color: white; 
        height: 60px;
        display:flex;
