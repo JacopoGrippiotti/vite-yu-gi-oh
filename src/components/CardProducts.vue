@@ -5,6 +5,7 @@
 </template>
 <script>
 import SingleCard from './SingleCard.vue'
+import {store} from '../store'
 export default {
     name:'CardProducts',
     components:{
@@ -12,7 +13,7 @@ export default {
     },
     data(){
         return{
-
+            store
         }
     }
 }
