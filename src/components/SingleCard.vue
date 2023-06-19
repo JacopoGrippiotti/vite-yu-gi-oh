@@ -5,7 +5,7 @@
         </div>
         
         <div class="card-title">
-            adsdadsaad
+            {{ name }}
         </div>
         <div class="card-type">
             
@@ -22,7 +22,8 @@ export default {
         }
     },
     props:{
-        image: String
+        image: String,
+        name: String
     }
 }
 </script>
@@ -38,6 +39,11 @@ export default {
         flex-direction: column;
         align-content: space-between;
         text-align: center;
+
+        div.card-title{
+            color: white;
+            padding: 10px 0px;
+        }
         div.img-wrapper{
             width: 100%;
             
