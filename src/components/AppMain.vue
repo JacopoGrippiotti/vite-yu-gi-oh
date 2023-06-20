@@ -1,15 +1,38 @@
 <template>
     <main>
-        <CardProducts/>
+        <DropdownFilter/>
+        <CardProducts
+         :charactersList="charactersList"/>
     </main>
     
 </template>
 <script>
 import CardProducts from './CardProducts.vue';
+import DropdownFilter from './DropdownFilter.vue';
+import axios from 'axios';
 export default {
     name:'AppMain',
     components:{
-        CardProducts
+        CardProducts,
+        DropdownFilter
+    },
+    data(){
+        return{
+            apiUrl:'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
+            response:[],
+            charactersList:[]
+        }
+    },
+    created(){
+        axios.get(this.apiUrl)
+        .then((response) => {
+            this.response = response
+            this.charactersList = response.data.data
+        }) 
+        .catch(function (error){
+            console.log(error)
+        })
+        
     }
 }
 </script>
@@ -20,6 +43,7 @@ export default {
     main{
         background-color: orange;
         display: flex;
+        flex-direction: column;
     }
     
 </style>
