@@ -23,8 +23,9 @@ export default {
             charactersList:[]
         }
     },
-    created(){
-        axios.get(this.apiUrl)
+    methods:{
+        callApi(){
+            axios.get(this.apiUrl)
         .then((response) => {
             this.response = response
             this.charactersList = response.data.data
@@ -32,7 +33,10 @@ export default {
         .catch(function (error){
             console.log(error)
         })
-        
+        }
+    },
+    created(){
+       this.callApi()
     }
 }
 </script>
