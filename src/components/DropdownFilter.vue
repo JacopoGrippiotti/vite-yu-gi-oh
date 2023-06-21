@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <select class="dropdown-menu" @change="ciao" v-model="selectedArchetype">
-          <option v-for="archetype in archetypeList" :value="archetype" >{{ archetype }}</option>
+        <select class="dropdown-menu" @change="$emit('changedArchetype',selectedArchetype)" v-model="selectedArchetype">
+          <option v-for="archetype in archetypeList" :value="archetype.archetype_name" >{{ archetype.archetype_name }}</option>
         </select>
     </div>
-    
+
 </template>
 <script>
 import axios from 'axios';
@@ -26,9 +26,7 @@ export default {
         axios.get(this.apiUrl)
         .then((response) => {
 
-            for (let i=0; i<3; i++){
-                this.archetypeList.push(response.data[i].archetype_name)
-            }
+            this.archetypeList = response.data
             
 
             

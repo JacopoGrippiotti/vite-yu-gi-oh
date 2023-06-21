@@ -1,6 +1,6 @@
 <template>
     <main>
-        <DropdownFilter/>
+        <DropdownFilter @changedArchetype="callApi"/>
         <CardProducts
          :charactersList="charactersList"/>
     </main>
@@ -18,14 +18,20 @@ export default {
     },
     data(){
         return{
-            apiUrl:'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
+            apiUrl:'https://db.ygoprodeck.com/api/v7/cardinfo.php?',
             response:[],
             charactersList:[]
         }
     },
     methods:{
-        callApi(){
-            axios.get(this.apiUrl)
+        callApi(needle){
+            axios.get(this.apiUrl ,{
+                params:{
+                    num:20,
+                    offset:0,
+                    archetype:needle
+                }
+            })
         .then((response) => {
             this.response = response
             this.charactersList = response.data.data
